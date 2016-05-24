@@ -1,13 +1,15 @@
+.PHONY: requirements.txt
+
 virtualenv=$(shell which virtualenv)
 
-ipython:tensorflow/bin/ipython3
+jupyter:tensorflow/bin/jupyter
 	$< notebook
 
-
-tensorflow/bin/ipython3: requirements.txt
+tensorflow/bin/jupyter: requirements.txt
 
 requirements.txt: tensorflow/bin/pip
 	$< install -r $@
+	$< install --upgrade https://storage.googleapis.com/tensorflow/mac/tensorflow-0.8.0-py3-none-any.whl
 
 tensorflow/bin/pip: virtualenv
 

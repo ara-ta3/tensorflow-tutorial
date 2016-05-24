@@ -87,3 +87,4 @@ __pycache__
 
 
 tensorflow
+src/MNIST_DATA/*
