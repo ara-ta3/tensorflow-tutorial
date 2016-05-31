@@ -1,5 +1,9 @@
 .PHONY: requirements.txt
 
+tensorboard: 
+	which open && open http://localhost:6006
+	tensorflow/bin/tensorboard --logdir=./src/MNIST_DATA
+
 virtualenv=$(shell which virtualenv)
 
 jupyter:tensorflow/bin/jupyter
